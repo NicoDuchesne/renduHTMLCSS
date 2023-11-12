@@ -1,0 +1,286 @@
+* {
+    margin :0;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+/*STRUCTURE GENERALE DE LA PAGE*/
+body { /*Contient tout, plus precisement : nav + .firstZone (en column)*/
+    display : flex;
+    flex-direction: column;
+}
+
+nav { /* premiere partie du body*/
+    background: linear-gradient(rgb(32, 99, 141), rgb(0, 17, 27));
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.firstZone { /* seconde partie du body, plus precisement : aside + .secondZone (en row)*/
+    display : flex;
+    flex-direction: row;
+}
+
+aside { /* premiere partie de .firstZone*/
+    background-color: rgb(0, 17, 27);
+    width : 15vw;
+    display: flex;
+    flex-direction: column;
+    justify-content:start;
+    align-items: start;
+}
+
+.secondZone { /* seconde partie de .firstZone, plus precisement : header + main + footer (en column)*/
+    width: 85vw;
+    display: flex;
+    flex-direction: column;
+}
+
+header { /* premiere partie de .secondZone*/
+    background-color: rgb(22, 22, 22);
+}
+
+main { /* deuxieme partie de .secondZone, c'est ici que le contenu va changer entre les fichiers html*/
+    background-color: rgb(22, 22, 22);
+    color: rgb(241, 231, 231);
+    padding-bottom: 2%;
+}
+
+
+footer{ /* troizieme partie de .secondZone*/
+    background-color: rgb(32, 99, 141);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 13vh;
+}
+
+
+/* ELEMENTS MODIFIES DANS NAV */
+nav img{
+    height: 15vh;
+    width: 15vw;
+   
+}
+
+nav a.button{
+    font-size: 5vw;
+    background-color: rgb(32, 99, 141);
+    color: rgb(163, 163, 163);
+    text-decoration: none;
+    border-radius: 10px;
+    padding : 3px;
+}
+
+nav a.button:hover {
+    transform: scale(1.2);
+  }
+
+/* ELEMENTS MODIFIES DANS ASIDE */
+
+aside a{
+    font-size: 2vw;
+    padding : 5%;
+    color: rgb(163, 163, 163);
+    text-decoration: none;
+}
+
+/* ELEMENTS MODIFIES DANS HEADER*/
+
+header img{
+    width: 85vw;
+}
+
+/* ELEMENTS MODIFIES DANS FOOTER */
+
+footer img{
+    height: 12vh;
+    width:8vw;
+}
+
+
+/*MODIFICATIONS DANS LE MAIN DE MES PAGES HTML*/
+
+/* Les articles utilisés pour présenter les persos (index.html)*/
+
+#persos {
+    padding-top: 2%;
+}
+
+.characters {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+main article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2%;
+}
+
+main article img {
+    width: 400px;
+    height: 650px;
+}
+
+/* Les sections utilisées pour présenter les jeux (games.html)*/
+
+main section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 2%;
+}
+
+main section h2{
+    width: 85vw;
+}
+
+main section img {
+    width: 20vw;
+    padding-top: 2%;
+}
+
+main section p {
+    width: 60vw;
+    padding-top: 2%;
+}
+
+/* La div .chronology pour présenter les ordres chronologiques (chrono.html) */
+
+.chronology{
+    display: flex;
+    flex-direction: column;
+}
+
+.chronology img {
+    width: 85vw;
+}
+
+.chronology p {
+    padding-top: 2%;
+}
+
+.chronology ul {
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.chronology li {
+    padding-bottom: 1%;
+}
+
+
+/*RESPONSIV POUR TABLETTES*/
+
+/* changements apportés :
+    - dans le nav : on masque l'image en haut à droite et on redimensionne celle d'en haut à gauche
+    - on redimensionne les images des personnages
+    - on redimensione le footer et ses images
+*/
+
+@media all and (max-width: 1024px){
+    
+    nav img{
+        height: 12vh;
+        width: 22vw;
+       
+    }
+
+    #sora {
+        display : none;
+    }
+
+    main article img {
+        width: 300px;
+        height: 450px;
+    }
+
+    footer {
+        height: 8vh;
+    }
+
+    footer img{
+        height: 7vh;
+        width:10vw;
+    }
+
+}
+
+
+/*RESPONSIV POUR TELEPHONES*/
+
+/* changements apportés :  */
+
+ @media all and (max-device-width: 480px) {
+    /* - dans le nav : on redimensione encore l'image en haut à gauche */
+    nav img{
+        height: 8vh;
+        width: 28vw;
+       
+    }
+
+    /* - on redimensionne encore les images des personnages */
+    main article img {
+        width: 200px;
+        height: 300px;
+    }
+
+    /* - on redimensione encore le footer et ses images */
+    footer {
+        height: 6vh;
+    }
+
+    footer img{
+        height: 5vh;
+        width:10vw;
+    }
+
+    /* - on masque aside pour plus de lisibilité et de place */       
+    aside{
+        display : none;
+    }
+
+    /* - on redimensionne les différents elements pour s'adapter à la disparition du aside */
+    .secondZone {
+        width: 100vw;
+    }
+
+    header img{
+        width: 100vw;
+    }
+
+    .chronology img {
+        width: 100vw;
+    }
+
+    main section h2{
+        width: 100vw;
+    }
+    
+    main section img {
+        width: 25vw;
+    }
+    
+    main section p {
+        width: 65vw;
+    }
+
+    /* - on redimensionne la première section dans index.html pour plus de clarté */
+    #presentation img{
+        width: 95vw;
+    }
+
+    #presentation p{
+        width: 85vw;
+    }
+
+} 
